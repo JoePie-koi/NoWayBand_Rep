@@ -64,10 +64,11 @@ nav ul li a:hover {
 
 
 /* Hero Section */
-..hero {
+.hero {
     text-align: center;
     background: url('../images/HeroBanner.png') no-repeat center center;
-    background-size: cover; /* Ensure the image covers the entire section */
+    background-size: contain; /* Ensures the entire image is visible */
+    background-color: black; /* Fills any extra space with black */
     color: white;
     height: calc(100vh - 40px); /* Full screen height minus footer */
     display: flex;
@@ -545,6 +546,14 @@ nav ul li a:hover {
 }
 
 /* Hero Section */
+.hero {
+    text-align: center;
+    background: url('../images/HeroBanner.png') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 20px;
+    height: auto;
+}
 
 .hero h1 {
     font-size: 2rem;
