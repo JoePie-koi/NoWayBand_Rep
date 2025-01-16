@@ -545,14 +545,6 @@ nav ul li a:hover {
 }
 
 /* Hero Section */
-.hero {
-    text-align: center;
-    background: url('../images/HeroBanner.png') no-repeat center center;
-    background-size: cover;
-    color: white;
-    padding: 20px;
-    height: auto;
-}
 
 .hero h1 {
     font-size: 2rem;
