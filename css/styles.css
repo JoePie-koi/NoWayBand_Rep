@@ -417,7 +417,6 @@ section h1, section h2 {
     background: #1abc9c;
 }
 
-
 /* Social Media Section */
 .social-media {
     margin-top: 20px;
@@ -451,157 +450,38 @@ footer {
     border-top: none; /* Remove border */
 }
 
-/* General Mobile Styles */
-@media only screen and (max-width: 768px) {
-    /* Navigation */
-    header {
-        background: #34495e;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
-    }
+/*--------------------------------------------------------------------------------------*/\
 
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    /* Adjust Header */
     nav ul {
         flex-direction: column;
         align-items: center;
-        display: none; /* Hide menu by default */
-    }
-
-    label[for="menu-toggle"] {
-        display: block;
-        color: white;
-        font-size: 1.5rem;
-        padding: 10px;
-        cursor: pointer;
-        text-align: center;
-    }
-
-    #menu-toggle:checked + ul {
-        display: flex;
     }
 
     nav ul li {
         margin: 10px 0;
     }
 
-    nav ul li a {
-        font-size: 1.2rem;
-        padding: 10px 15px;
-        display: block;
-        text-align: center;
-    }
-
     /* Hero Section */
-    .hero {
-        background-size: cover; /* Ensure the image fills the section */
-        height: 80vh; /* Adjust for landscape view */
-        padding: 10px;
-        justify-content: center; /* Center content vertically */
-    }
-
     .hero h1 {
-        font-size: 1.8rem;
-        margin-bottom: 15px;
+        font-size: 2.5rem;
     }
 
     .featured-cover {
         max-width: 90%;
-        padding: 10px;
-        font-size: 1rem;
+        padding: 15px;
     }
 
-    /* Sections */
-    section {
-        padding: 10px;
-        margin: 10px auto;
-        max-width: 95%;
-        text-align: center;
-    }
-
-    /* Gallery and Video Covers */
-    .gallery-grid,
-    .videos {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 10px;
-    }
-
-    .gallery-item img,
-    .gallery-item video,
-    .video video {
-        height: 150px; /* Smaller media height */
-        object-fit: cover;
-    }
-
-    /* Events Section */
-    .events-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 10px;
-    }
-
-    .event-card img {
-        height: 150px;
-        object-fit: cover;
-    }
-
-    .event-details {
-        font-size: 0.9rem;
-        text-align: center;
-    }
-
-    /* Contact Form */
-    .contact form {
-        max-width: 90%;
-        padding: 10px;
-        font-size: 0.9rem;
-    }
-
-    /* Footer */
-    footer {
-        font-size: 0.8rem;
-        padding: 10px;
-    }
-}
-
-/* Landscape Mode for Phones */
-@media only screen and (max-width: 768px) and (orientation: landscape) {
-    /* Ensure Navigation Works */
-    nav ul {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    nav ul li {
-        margin: 5px;
-        width: auto; /* Prevent items from being too wide */
-    }
-
-    nav ul li a {
-        padding: 5px 10px;
-        font-size: 1rem;
-    }
-
-    /* Hero Section Adjustments */
-    .hero {
-        height: 60vh;
-        padding: 5px;
-    }
-
-    .hero h1 {
+    .featured-cover h2 {
         font-size: 1.5rem;
     }
 
-    .featured-cover {
-        font-size: 0.8rem;
-    }
-
-    /* Gallery, Videos, and Events */
-    .gallery-grid,
-    .videos {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    }
-
-    .event-card img {
-        height: 100px;
+    /* Section Padding */
+    section {
+        padding: 15px;
+        margin: 10px;
     }
 }
