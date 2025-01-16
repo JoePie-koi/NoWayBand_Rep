@@ -74,13 +74,6 @@ nav ul li a:hover {
     width: 100%; /* Ensures it spans the full width */
 }
 
-.hero h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    margin-bottom: 20px;
-}
-
 .featured-cover {
     background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background for better contrast */
     color: white; /* Ensures text is visible */
@@ -93,7 +86,7 @@ nav ul li a:hover {
 }
 
 .featured-cover p,
-.featured-cover h2 {
+.featured-cover h1 {
     color: white; /* Makes all text in this section white */
     margin: 5px 0;
 }
