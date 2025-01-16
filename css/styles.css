@@ -15,14 +15,13 @@ body, html {
     line-height: 1.6;
 }
 
-
-
 /* Header and Navigation */
 header {
     background: #34495e;
     color: white;
     padding: 10px 0;
     text-align: center;
+    position: relative;
 }
 
 /* Desktop Navigation */
@@ -58,6 +57,59 @@ nav ul li a:hover {
     transition: background-color 0.3s; /* Smooth transition effect */
 }
 
+/* Hamburger Menu for Mobile */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+/* Mobile Navigation */
+#menu-toggle {
+    display: none;
+}
+
+nav.mobile-nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: #2c3e50;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+nav.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav.mobile-nav ul li {
+    margin: 10px 0;
+}
+
+nav.mobile-nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+nav.mobile-nav ul li a:hover {
+    background: #1abc9c;
+    border-radius: 5px;
+}
+
+#menu-toggle:checked + .menu-icon + nav.mobile-nav {
+    display: flex;
+}
 
 /* Hero Section */
 .hero {
@@ -112,8 +164,6 @@ section h1, section h2 {
     color: #2c3e50;
     margin-bottom: 10px;
 }
-
-
 
 /* About Us Page */
 .about {
@@ -225,9 +275,6 @@ section h1, section h2 {
     outline: none;
 }
 
-
-
-
 /* Gallery Page */
 .gallery {
     padding: 40px 20px;
@@ -242,7 +289,6 @@ section h1, section h2 {
     font-weight: bold;
 }
 
-
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
@@ -252,6 +298,7 @@ section h1, section h2 {
     justify-content: center; /* Align grid in the center */
     align-items: center; /* Ensure vertical alignment */
 }
+
 .gallery-item {
     position: relative;
     overflow: hidden;
@@ -278,9 +325,6 @@ section h1, section h2 {
     transform: scale(1.05); /* Slight zoom on hover */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
-
-
-
 
 /* Events Page */
 .events-section {
@@ -364,6 +408,7 @@ section h1, section h2 {
     font-size: 2.5rem;
     color: #2c3e50;
 }
+
 .contact h3 {
     text-align: center;
     margin-bottom: 10px;
@@ -377,7 +422,6 @@ section h1, section h2 {
     font-size: 1rem;
     color: #555;
 }
-
 
 .contact form input, 
 .contact form textarea, 
@@ -405,7 +449,6 @@ section h1, section h2 {
     background: #1abc9c;
 }
 
-
 /* Social Media Section */
 .social-media {
     margin-top: 20px;
@@ -425,7 +468,6 @@ section h1, section h2 {
     transform: scale(1.1);
 }
 
-
 /* Footer */
 footer {
     background: black;
@@ -435,4 +477,19 @@ footer {
     height: 40px; /* Fixed footer height */
     margin-top: 0;
     border-top: none; /* Remove border */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav.mobile-nav {
+        display: flex;
+    }
 }
