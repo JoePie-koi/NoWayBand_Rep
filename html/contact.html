@@ -8,16 +8,27 @@
 </head>
 <body>
     <header>
-       <nav>
-           <ul>
-               <li><a href="../index.html">Home</a></li>
-               <li><a href="about.html">About Us</a></li>
-               <li><a href="covers.html">Covers</a></li>
-               <li><a href="events.html">Events</a></li>
-               <li><a href="gallery.html">Gallery</a></li>
-               <li><a href="contact.html" class="active">Contact Us</a></li>
-           </ul>
-       </nav>
+        <button class="hamburger">☰</button>
+        <nav>
+            <ul class="desktop-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="covers.html">Covers</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
+            </ul>
+        </nav>
+        <nav class="mobile-nav hidden">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="covers.html">Covers</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
+            </ul>
+        </nav>
     </header>
     <section class="contact">
         <h1>Contact Us</h1>
@@ -52,5 +63,16 @@
     <footer>
         <p>&copy; 2024 No Way Band. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.querySelector(".hamburger");
+            const mobileNav = document.querySelector(".mobile-nav");
+
+            menuToggle.addEventListener("click", function () {
+                mobileNav.classList.toggle("hidden");
+            });
+        });
+    </script>
 </body>
 </html>

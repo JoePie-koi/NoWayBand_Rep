@@ -8,7 +8,18 @@
 </head>
 <body>
     <header>
+        <button class="hamburger">☰</button>
         <nav>
+            <ul class="desktop-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="covers.html">Covers</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <nav class="mobile-nav hidden">
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="about.html" class="active">About Us</a></li>
@@ -20,7 +31,7 @@
         </nav>
     </header>
 
-    <<section class="about">
+    <section class="about">
         <h1>About No Way Band</h1>
         <p class="band-description">
             The No Way Band was formed in 2024 with a shared love for music and creativity, as well as, being colleagues in the same hotel. 
@@ -56,5 +67,16 @@
     <footer>
         <p>&copy; 2024 No Way Band. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.querySelector(".hamburger");
+            const mobileNav = document.querySelector(".mobile-nav");
+
+            menuToggle.addEventListener("click", function () {
+                mobileNav.classList.toggle("hidden");
+            });
+        });
+    </script>
 </body>
 </html>
