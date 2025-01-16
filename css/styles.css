@@ -57,57 +57,46 @@ nav ul li a:hover {
     transition: background-color 0.3s; /* Smooth transition effect */
 }
 
-/* Hamburger Menu for Mobile */
-.menu-icon {
-    display: none;
-    font-size: 30px;
-    color: white;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    cursor: pointer;
-}
-
-/* Mobile Navigation */
+/* Toggle Checkbox */
 #menu-toggle {
     display: none;
 }
 
-nav.mobile-nav {
+.mobile-nav {
     display: none;
     flex-direction: column;
     align-items: center;
-    background: #2c3e50;
     position: absolute;
     top: 50px;
     left: 0;
     right: 0;
+    background: #2c3e50;
     z-index: 1;
 }
 
-nav.mobile-nav ul {
+.mobile-nav ul {
     list-style: none;
     padding: 0;
 }
 
-nav.mobile-nav ul li {
+.mobile-nav ul li {
     margin: 10px 0;
 }
 
-nav.mobile-nav ul li a {
+.mobile-nav ul li a {
     text-decoration: none;
     color: white;
-    font-size: 1.2rem;
-    padding: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
     transition: background-color 0.3s;
 }
 
-nav.mobile-nav ul li a:hover {
+.mobile-nav ul li a:hover {
     background: #1abc9c;
-    border-radius: 5px;
 }
 
-#menu-toggle:checked + .menu-icon + nav.mobile-nav {
+/* Show Mobile Menu on Toggle */
+#menu-toggle:checked + .menu-icon + .mobile-nav {
     display: flex;
 }
 
@@ -567,10 +556,6 @@ footer {
     }
 
     nav ul {
-        display: none;
-    }
-
-    nav.mobile-nav {
-        display: flex;
+        display: none; /* Hide desktop navigation */
     }
 }
