@@ -56,18 +56,29 @@ nav ul li a:hover {
     color: white; /* Keeps the text white for readability */
     transition: background-color 0.3s; /* Smooth transition effect */
 }
-
 /* Toggle Checkbox */
 #menu-toggle {
-    display: none;
+    display: none; /* Hide the checkbox itself */
 }
 
+.menu-icon {
+    display: none; /* Initially hidden */
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Mobile Navigation */
 nav.mobile-nav {
     display: none;
     flex-direction: column;
     align-items: center;
     background: #2c3e50;
-    position: absolute;
+    position: fixed;
     top: 50px;
     left: 0;
     right: 0;
@@ -77,6 +88,7 @@ nav.mobile-nav {
 .mobile-nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .mobile-nav ul li {
@@ -96,11 +108,11 @@ nav.mobile-nav {
 }
 
 /* Show Mobile Menu on Toggle */
-#menu-toggle:checked + .menu-icon + .mobile-nav {
+#menu-toggle:checked + .menu-icon + nav.mobile-nav {
     display: flex;
 }
 
-/* Basic styles for the menu button */
+/* Menu Button for Mobile */
 .menu-btn {
     display: none; /* Hide on larger screens */
     position: absolute;
@@ -136,10 +148,10 @@ nav.mobile-nav {
 
 /* Checkbox toggle */
 .menu-toggle {
-    display: none;
+    display: none; /* Hide the menu toggle on larger screens */
 }
 
-/* Mobile menu */
+/* Mobile menu - Alternative Slide-in */
 .nav-menu {
     display: flex;
     flex-direction: column;
@@ -166,28 +178,33 @@ nav.mobile-nav {
 }
 
 /* Toggle menu on click */
-.menu-toggle:checked ~ .nav-menu {
-    right: 0;
+#menu-toggle:checked ~ .menu-icon ~ .nav-menu {
+    right: 0; /* Slide in the menu */
 }
 
-/* Show menu button on smaller screens */
+/* Responsive Styles for Mobile */
 @media (max-width: 768px) {
-    .menu-btn {
-        display: block;
+    .menu-icon {
+        display: block; /* Show menu button on mobile */
     }
 
     nav ul {
-        display: none; /* Hide the default nav on mobile */
-    }
-}
-
-@media (min-width: 769px) {
-    .menu-icon {
-        display: none;
+        display: none; /* Hide desktop nav on mobile */
     }
 
     nav.mobile-nav {
-        display: none;
+        display: flex; /* Ensure mobile menu works */
+    }
+}
+
+/* Responsive Styles for Desktop */
+@media (min-width: 769px) {
+    .menu-icon {
+        display: none; /* Hide menu button on desktop */
+    }
+
+    nav.mobile-nav {
+        display: none; /* Ensure desktop does not show mobile menu */
     }
 }
 
