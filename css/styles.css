@@ -62,15 +62,15 @@ nav ul li a:hover {
     display: none;
 }
 
-.mobile-nav {
+nav.mobile-nav {
     display: none;
     flex-direction: column;
     align-items: center;
+    background: #2c3e50;
     position: absolute;
     top: 50px;
     left: 0;
     right: 0;
-    background: #2c3e50;
     z-index: 1;
 }
 
@@ -180,6 +180,17 @@ nav ul li a:hover {
         display: none; /* Hide the default nav on mobile */
     }
 }
+
+@media (min-width: 769px) {
+    .menu-icon {
+        display: none;
+    }
+
+    nav.mobile-nav {
+        display: none;
+    }
+}
+
 
 /* Hero Section */
 .hero {
@@ -549,13 +560,4 @@ footer {
     border-top: none; /* Remove border */
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .menu-icon {
-        display: block;
-    }
 
-    nav ul {
-        display: none; /* Hide desktop navigation */
-    }
-}
