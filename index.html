@@ -8,20 +8,9 @@
 </head>
 <body>
     <header>
-        <button class="hamburger">☰</button>
         <nav>
-            <ul class="desktop-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="html/about.html">About Us</a></li>
-                <li><a href="html/covers.html">Covers</a></li>
-                <li><a href="html/events.html">Events</a></li>
-                <li><a href="html/gallery.html">Gallery</a></li>
-                <li><a href="html/contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-        <nav class="mobile-nav hidden">
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html"class="active">Home</a></li>
                 <li><a href="html/about.html">About Us</a></li>
                 <li><a href="html/covers.html">Covers</a></li>
                 <li><a href="html/events.html">Events</a></li>
@@ -46,16 +35,5 @@
     <footer>
         <p>&copy; 2024 No Way Band. All rights reserved.</p>
     </footer>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const menuToggle = document.querySelector(".hamburger");
-            const mobileNav = document.querySelector(".mobile-nav");
-
-            menuToggle.addEventListener("click", function () {
-                mobileNav.classList.toggle("hidden");
-            });
-        });
-    </script>
 </body>
 </html>

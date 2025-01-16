@@ -8,18 +8,7 @@
 </head>
 <body>
     <header>
-        <button class="hamburger">☰</button>
         <nav>
-            <ul class="desktop-menu">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="covers.html">Covers</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="gallery.html" class="active">Gallery</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-        <nav class="mobile-nav hidden">
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -35,7 +24,7 @@
         <section class="gallery">
             <h1>Gallery</h1>
             <div class="gallery-grid">
-                
+               
                 <div class="gallery-item">
                     <img src="../images/pic1.jpg" alt="Gallery Image 1">
                 </div>
@@ -49,7 +38,7 @@
                     <img src="../images/guitar.jpg" alt="Gallery Image 3">
                 </div>
 
-                
+               
                 <div class="gallery-item">
                     <img src="../images/pic5.jpg" alt="Gallery Image 5">
                 </div>
@@ -63,7 +52,7 @@
                     <img src="../images/piano.jpg" alt="Gallery Image 4">
                 </div>
 
-                
+               
                 <div class="gallery-item">
                     <video controls>
                         <source src="../media/video2.mp4" type="video/mp4">
@@ -83,16 +72,5 @@
     <footer>
         <p>© 2024 No Way Band. All rights reserved.</p>
     </footer>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const menuToggle = document.querySelector(".hamburger");
-            const mobileNav = document.querySelector(".mobile-nav");
-
-            menuToggle.addEventListener("click", function () {
-                mobileNav.classList.toggle("hidden");
-            });
-        });
-    </script>
 </body>
 </html>
