@@ -453,35 +453,19 @@ footer {
 /*--------------------------------------------------------------------------------------*/\
 
 
+
 /* Responsive Design */
 @media only screen and (max-width: 768px) {
-    /* Adjust Header */
     nav ul {
         flex-direction: column;
-        align-items: center;
     }
 
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    /* Hero Section */
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
-    .featured-cover {
-        max-width: 90%;
-        padding: 15px;
-    }
-
-    .featured-cover h2 {
-        font-size: 1.5rem;
-    }
-
-    /* Section Padding */
     section {
         padding: 15px;
-        margin: 10px;
+        margin: 15px auto;
     }
 }
