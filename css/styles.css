@@ -55,6 +55,12 @@ nav ul li a:hover {
     background: #1abc9c;
 }
 
+nav ul li a:hover {
+    background: #b0b0b0; /* Neutral gray color */
+    color: white; /* Keeps the text white for readability */
+    transition: background-color 0.3s; /* Smooth transition effect */
+}
+
 
 
 /* Hero Section */
@@ -282,49 +288,68 @@ section h1, section h2 {
 
 
 /* Events Page */
-body {
-    background-color: #f4f4f4; /* Light gray background */
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-.events-container {
-    max-width: 800px; /* Limit content width */
-    margin: 20px auto; /* Center the container */
-    padding: 20px;
-    background: white; /* White background for the content */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-.events-container h1 {
+.events-section {
+    padding: 40px 20px;
+    background-color: #f4f4f4; /* Light background */
     text-align: center;
+}
+
+.events-section h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.events-section p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Spacing between event cards */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.event-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.event-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ensures image fits neatly */
+}
+
+.event-details {
+    padding: 15px;
+    text-align: left;
+}
+
+.event-details h2 {
+    font-size: 1.5rem;
     color: #34495e;
     margin-bottom: 10px;
 }
 
-.events-container p {
-    text-align: center;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-.event-item {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.event-item h2 {
-    font-size: 1.2rem;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-.event-item p {
+.event-details p {
     font-size: 1rem;
     color: #555;
-    line-height: 1.5;
+    margin: 5px 0;
 }
+
 
 
 
@@ -428,4 +453,108 @@ footer {
     height: 40px; /* Fixed footer height */
     margin-top: 0;
     border-top: none; /* Remove border */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    /* General body adjustments */
+    body {
+        font-size: 16px; /* Slightly larger font for readability */
+    }
+
+    /* Navigation */
+    nav ul {
+        flex-direction: column; /* Stack menu items vertically */
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Add spacing between menu items */
+    }
+
+    nav ul li a {
+        font-size: 18px; /* Increase clickable area for links */
+        padding: 10px; /* Add padding for better touch interaction */
+    }
+
+    /* Hero Section */
+    .hero {
+        background-size: cover; /* Cover entire area on smaller screens */
+        height: auto; /* Allow the hero section to scale naturally */
+        padding: 20px; /* Add padding for better spacing */
+    }
+
+    .hero h1 {
+        font-size: 2rem; /* Reduce the title size */
+    }
+
+    .featured-cover {
+        max-width: 90%; /* Ensure it doesn't exceed screen width */
+        padding: 10px; /* Adjust padding */
+        font-size: 0.9rem; /* Slightly smaller text size */
+    }
+
+    /* About Section */
+    .about {
+        margin: 10px; /* Reduce margin for smaller screens */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .band-description {
+        font-size: 1rem; /* Smaller font for better spacing */
+    }
+
+    .members {
+        flex-direction: column; /* Stack members vertically */
+    }
+
+    .member {
+        max-width: 90%; /* Ensure members fit the screen width */
+    }
+
+    /* Gallery Section */
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust grid columns for smaller screens */
+        gap: 10px; /* Reduce space between items */
+    }
+
+    .gallery-item img,
+    .gallery-item video {
+        height: auto; /* Remove fixed height for better scaling */
+        object-fit: contain; /* Ensure full image/video is visible */
+    }
+
+    /* Events Page */
+    .events-container {
+        margin: 10px; /* Reduce overall margin */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .event-item {
+        text-align: left; /* Align text to the left */
+        font-size: 1rem; /* Slightly smaller font */
+    }
+
+    .event-item h2 {
+        font-size: 1.2rem; /* Adjust title size */
+    }
+
+    /* Contact Form */
+    .contact form {
+        width: 90%; /* Full width minus some padding */
+        margin: 0 auto; /* Center the form */
+    }
+
+    .contact form input,
+    .contact form textarea,
+    .contact form button {
+        font-size: 1rem; /* Slightly smaller font */
+        padding: 10px; /* Adjust padding */
+    }
+
+    /* Footer */
+    footer {
+        font-size: 0.9rem; /* Smaller footer text */
+        padding: 10px; /* Adjust padding for spacing */
+    }
 }
