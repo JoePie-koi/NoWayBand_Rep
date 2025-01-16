@@ -111,6 +111,87 @@ nav.mobile-nav ul li a:hover {
     display: flex;
 }
 
+/* Basic styles for the menu button */
+.menu-btn {
+    display: none; /* Hide on larger screens */
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.menu-btn span,
+.menu-btn span::before,
+.menu-btn span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+.menu-btn span::before {
+    content: '';
+    top: -10px;
+}
+
+.menu-btn span::after {
+    content: '';
+    top: 10px;
+}
+
+/* Checkbox toggle */
+.menu-toggle {
+    display: none;
+}
+
+/* Mobile menu */
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 200px;
+    height: 100%;
+    background: #34495e;
+    transition: right 0.3s ease;
+    z-index: 999;
+}
+
+.nav-menu li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    display: block;
+}
+
+/* Toggle menu on click */
+.menu-toggle:checked ~ .nav-menu {
+    right: 0;
+}
+
+/* Show menu button on smaller screens */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    nav ul {
+        display: none; /* Hide the default nav on mobile */
+    }
+}
+
 /* Hero Section */
 .hero {
     text-align: center;
