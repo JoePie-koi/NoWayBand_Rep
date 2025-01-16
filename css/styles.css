@@ -438,58 +438,82 @@ footer {
 
 /* Mobile Styles */
 @media only screen and (max-width: 768px) {
-/* General Reset */
-* {
+/* General Mobile Styling */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body, html {
-    font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    color: #333;
     line-height: 1.6;
 }
 
-/* Header Navigation */
+/* Header and Navigation */
 header {
     background: #34495e;
-    color: white;
     padding: 10px 0;
     text-align: center;
+    position: relative;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: white;
+}
+
+nav {
+    background: #2c3e50;
 }
 
 nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    list-style: none;
-    padding: 10px;
-    margin: 0;
-    background: #2c3e50;
-    text-align: left;
+    align-items: center;
+    text-align: center;
 }
 
 nav ul li {
+    width: 100%;
     margin: 5px 0;
 }
 
 nav ul li a {
+    display: block;
+    padding: 10px;
     text-decoration: none;
     color: white;
-    padding: 10px;
-    display: block;
+    font-size: 1rem;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
+nav ul li a:hover,
 nav ul li a.active {
-    background: #1abc9c;
-    font-weight: bold;
+    background: #bdc3c7; /* Neutral Gray */
+    color: #2c3e50;
 }
 
-nav ul li a:hover {
-    background: gray;
+/* Menu Toggle */
+.menu-toggle {
+    display: block;
+    padding: 10px;
+    background: #34495e;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    font-size: 1.2rem;
+}
+
+.menu-toggle:checked + nav ul {
+    display: flex;
+}
+
+nav ul {
+    display: none;
+    flex-direction: column;
 }
 
 /* Hero Section */
@@ -497,20 +521,13 @@ nav ul li a:hover {
     text-align: center;
     background: url('../images/HeroBanner.png') no-repeat center center;
     background-size: cover;
-    background-color: black;
     color: white;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding: 20px;
+    height: auto;
 }
 
 .hero h1 {
     font-size: 2rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
     margin-bottom: 15px;
 }
 
@@ -518,161 +535,160 @@ nav ul li a:hover {
     background: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 15px;
-    border-radius: 10px;
-    text-align: center;
+    border-radius: 5px;
+    margin: 20px auto;
     max-width: 90%;
+    text-align: center;
 }
 
+.featured-cover p,
 .featured-cover h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.featured-cover p {
+    margin: 5px 0;
     font-size: 1rem;
-    margin-bottom: 10px;
 }
 
 .featured-cover audio {
     width: 100%;
 }
 
-/* About Us Page */
-.about {
-    text-align: center;
-    padding: 20px;
+/* Section Styling */
+section {
+    padding: 15px;
+    margin: 15px auto;
     background: white;
     border-radius: 10px;
-    margin: 20px auto;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 95%;
+    text-align: center;
+}
+
+/* About Us */
+.about {
+    padding: 20px;
 }
 
 .about h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
     color: #2c3e50;
 }
 
-.about p {
+.band-description {
     font-size: 1rem;
+    margin: 15px 0;
     color: #555;
-    line-height: 1.8;
 }
 
-/* Events Page */
-.events {
+.members {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
 }
 
-.events h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+.member {
+    flex: 1 1 45%; /* Two columns */
+    background: #f4f4f4;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.member img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.member h2 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.member p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Events */
+.events-container {
+    padding: 20px;
+    background: white;
+    margin: 15px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+}
+
+.events-container h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
     color: #34495e;
 }
 
-.events p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 15px;
+.event-item {
+    margin: 10px 0;
 }
 
 .event-item h2 {
     font-size: 1.2rem;
     color: #333;
-    margin: 10px 0;
+    margin-bottom: 5px;
 }
 
 .event-item p {
     font-size: 1rem;
     color: #555;
-    margin: 5px 0;
 }
 
-/* Gallery Page */
-.gallery {
-    padding: 20px;
-}
-
-.gallery h1 {
-    font-size: 2rem;
-    color: #34495e;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-    justify-content: center;
-}
-
-.gallery-item {
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.gallery-item img,
-.gallery-item video {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Contact Page */
-.contact {
-    padding: 20px;
-    text-align: center;
-}
-
-.contact h1 {
-    font-size: 2rem;
-    color: #2c3e50;
-    margin-bottom: 10px;
-}
-
-.contact p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 20px;
-}
-
+/* Contact Form */
 .contact form {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 20px;
-    background: white;
+    padding: 15px;
+    background: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    margin: 20px auto;
+}
+
+.contact h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.contact p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #555;
 }
 
 .contact form input,
 .contact form textarea,
 .contact form button {
     padding: 10px;
+    font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 1rem;
+}
+
+.contact form textarea {
+    resize: none;
+    height: 100px;
 }
 
 .contact form button {
-    background: #2c3e50;
+    background: #34495e;
     color: white;
-    border: none;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .contact form button:hover {
-    background: #1abc9c;
+    background: #2c3e50;
 }
 
 /* Footer */
@@ -680,6 +696,6 @@ footer {
     background: black;
     color: white;
     text-align: center;
-    padding: 10px 0;
-    font-size: 0.9rem;
+    padding: 10px;
+    font-size: 0.8rem;
 }
