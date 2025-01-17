@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Covers - No Way Band</title>
+    <title>Covers - No Way Band</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <header>
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icon">&#9776;</label>
-        <nav>
+        <!-- Desktop Navigation -->
+        <nav class="desktop-menu">
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -19,36 +18,40 @@
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
+            <div class="social-icons">
+                <a href="#"><img src="../images/facebook_header.png" alt="Facebook"></a>
+                <a href="#"><img src="../images/instagram_header.png" alt="Instagram"></a>
+                <a href="#"><img src="../images/spotify_header.png" alt="Spotify"></a>
+            </div>
         </nav>
     </header>
 
-   <section class="covers">
-    <h1>Band Covers</h1>
-    <div class="videos">
-        <div class="video">
-            <h2>Creep</h2>
-            <video controls>
-                <source src="../media/creep.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+    <section class="covers">
+        <h1>Band Covers</h1>
+        <div class="videos">
+            <div class="video">
+                <h2>Creep</h2>
+                <video controls>
+                    <source src="../media/creep.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video">
+                <h2>Whiskey</h2>
+                <video controls>
+                    <source src="../media/whiskey.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video">
+                <h2>Feeling Good</h2>
+                <video controls>
+                    <source src="../media/FeelingGood.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </div>
-        <div class="video">
-            <h2>Whiskey</h2>
-            <video controls>
-                <source src="../media/Whiskey.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <div class="video">
-            <h2>Feeling Good</h2>
-            <video controls>
-                <source src="../media/FeelingGood.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </div>
-</section>
-
+    </section>
 
     <footer>
         <p>&copy; 2024 No Way Band. All rights reserved.</p>

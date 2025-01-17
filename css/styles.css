@@ -7,8 +7,7 @@
 
 body, html {
     height: 100%; /* Ensure the body and HTML take up the full height */
-    margin: 0; /* Remove any default margin */
-    /* Remove overflow: hidden to allow scrolling */
+    margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
@@ -20,22 +19,28 @@ header {
     background: #34495e;
     color: white;
     padding: 10px 0;
-    text-align: center;
     position: relative;
+    z-index: 1000; /* Ensure header is on top */
 }
 
-/* Desktop Navigation */
-nav ul {
+nav.desktop-menu {
     display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 10px 0;
-    margin: 0;
+    justify-content: center; /* Centers the navigation area */
+    align-items: center; /* Vertically centers items */
+    position: relative; /* Allows positioning of social icons */
+    padding: 10px 20px;
     background: #2c3e50;
 }
 
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto; /* Ensures the navigation buttons are centered */
+}
+
 nav ul li {
-    margin: 0 15px;
+    margin: 0 15px; /* Adds spacing between navigation items */
 }
 
 nav ul li a {
@@ -52,17 +57,37 @@ nav ul li a.active {
 }
 
 nav ul li a:hover {
-    background: #b0b0b0; /* Neutral gray color */
-    color: white; /* Keeps the text white for readability */
-    transition: background-color 0.3s; /* Smooth transition effect */
+    background: #b0b0b0;
+    color: white;
 }
-/* Toggle Checkbox */
+
+/* Social Icons */
+.social-icons {
+    position: absolute; /* Positions icons relative to the nav */
+    right: 20px; /* Positions icons on the far right */
+    top: 50%; /* Vertically aligns icons */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    display: flex;
+    gap: 10px; /* Adds spacing between icons */
+}
+
+.social-icons img {
+    width: 24px; /* Size of the icons */
+    height: 24px;
+    cursor: pointer;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Mobile Navigation */
 #menu-toggle {
     display: none; /* Hide the checkbox itself */
 }
 
 .menu-icon {
-    display: none; /* Initially hidden */
+    display: none;
     font-size: 30px;
     color: white;
     position: absolute;
@@ -72,30 +97,30 @@ nav ul li a:hover {
     z-index: 1000;
 }
 
-/* Mobile Navigation */
 nav.mobile-nav {
     display: none;
     flex-direction: column;
     align-items: center;
     background: #2c3e50;
     position: fixed;
-    top: 50px;
+    top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 999;
+    padding-top: 50px; /* Space for the header */
 }
 
-.mobile-nav ul {
+nav.mobile-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.mobile-nav ul li {
+nav.mobile-nav ul li {
     margin: 10px 0;
 }
 
-.mobile-nav ul li a {
+nav.mobile-nav ul li a {
     text-decoration: none;
     color: white;
     padding: 10px 20px;
@@ -103,113 +128,41 @@ nav.mobile-nav {
     transition: background-color 0.3s;
 }
 
-.mobile-nav ul li a:hover {
+nav.mobile-nav ul li a:hover {
     background: #1abc9c;
 }
 
-/* Show Mobile Menu on Toggle */
+/* Toggle Mobile Menu */
 #menu-toggle:checked + .menu-icon + nav.mobile-nav {
     display: flex;
 }
 
-/* Menu Button for Mobile */
-.menu-btn {
-    display: none; /* Hide on larger screens */
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-.menu-btn span,
-.menu-btn span::before,
-.menu-btn span::after {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    background: white;
-    border-radius: 3px;
-    transition: all 0.3s;
-}
-
-.menu-btn span::before {
-    content: '';
-    top: -10px;
-}
-
-.menu-btn span::after {
-    content: '';
-    top: 10px;
-}
-
-/* Checkbox toggle */
-.menu-toggle {
-    display: none; /* Hide the menu toggle on larger screens */
-}
-
-/* Mobile menu - Alternative Slide-in */
-.nav-menu {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 200px;
-    height: 100%;
-    background: #34495e;
-    transition: right 0.3s ease;
-    z-index: 999;
-}
-
-.nav-menu li {
-    margin: 10px 0;
-    text-align: center;
-}
-
-.nav-menu a {
-    text-decoration: none;
-    color: white;
-    padding: 10px 20px;
-    display: block;
-}
-
-/* Toggle menu on click */
-#menu-toggle:checked ~ .menu-icon ~ .nav-menu {
-    right: 0; /* Slide in the menu */
-}
-
-/* Responsive Styles for Mobile */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     .menu-icon {
-        display: block; /* Show menu button on mobile */
+        display: block; /* Show hamburger menu on mobile */
     }
 
     nav ul {
-        display: none; /* Hide desktop nav on mobile */
+        display: none; /* Hide desktop menu on mobile */
     }
 
-    nav.mobile-nav {
-        display: flex; /* Ensure mobile menu works */
+    .social-icons {
+        display: none; /* Hide social icons on mobile */
     }
 }
 
-/* Responsive Styles for Desktop */
 @media (min-width: 769px) {
     .menu-icon {
-        display: none; /* Hide menu button on desktop */
+        display: none; /* Hide hamburger menu on desktop */
     }
 
     nav.mobile-nav {
-        display: none; /* Ensure desktop does not show mobile menu */
+        display: none; /* Hide mobile nav on desktop */
     }
 }
 
-
-/* Hero Section */
+/* Hero Section (Unchanged) */
 .hero {
     text-align: center;
     background: url('../images/HeroBanner.png') no-repeat center center;
@@ -249,19 +202,7 @@ nav.mobile-nav {
     background: transparent; /* Transparent background for the audio player */
 }
 
-/* Section Styling */
-section {
-    padding: 20px;
-    margin: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-section h1, section h2 {
-    color: #2c3e50;
-    margin-bottom: 10px;
-}
+/*...........................................................................................................................................*/
 
 /* About Us Page */
 .about {
@@ -326,6 +267,7 @@ section h1, section h2 {
     font-size: 1rem;
     color: #666;
 }
+
 
 /* Covers Page */
 .covers {
@@ -565,6 +507,8 @@ section h1, section h2 {
 .social-media img:hover {
     transform: scale(1.1);
 }
+
+
 
 /* Footer */
 footer {
