@@ -3,16 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - No Way Band</title>
+    <title>No Way Band - Home</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <header>
+        <!-- Sidebar Toggle (Mobile) -->
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    
+        <!-- Overlay for Sidebar (Mobile) -->
+        <label for="menu-toggle" id="menu-overlay"></label>
+    
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html"class="active">About Us</a></li>
+                <li><a href="covers.html">Covers</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    
         <!-- Desktop Navigation -->
         <nav class="desktop-menu">
             <ul>
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="about.html"class="active">About Us</a></li>
                 <li><a href="covers.html">Covers</a></li>
                 <li><a href="events.html">Events</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
@@ -25,36 +44,38 @@
             </div>
         </nav>
     </header>
-
-    <section class="about">
-        <h1>About No Way Band</h1>
-        <p class="band-description">
-            The No Way Band was formed in 2024 with a shared love for music and creativity, as well as, being colleagues in the same hotel. Dedicated to creating unique covers of popular songs and bringing their personal style to each track, the band aims to resonate with audiences worldwide. Their video performances are packed with energy, passion, and unforgettable moments.
-        </p>
-        <h1>Meet the Band</h1>
-        <div class="members">
-            <div class="member">
-                <img src="../images/member1.jpg" alt="Member 1">
-                <h2>Antonio Maestro</h2>
-                <p>Lead vocalist and lyricist, bringing life to every performance with his dynamic stage presence.</p>
+    
+    <main>
+        <section class="about">
+            <h1>About No Way Band</h1>
+            <p class="band-description">
+                The No Way Band was formed in 2024 with a shared love for music and creativity, as well as, being colleagues in the same hotel. Dedicated to creating unique covers of popular songs and bringing their personal style to each track, the band aims to resonate with audiences worldwide. Their video performances are packed with energy, passion, and unforgettable moments.
+            </p>
+            <h1>Meet the Band</h1>
+            <div class="members">
+                <div class="member">
+                    <img src="../images/member1.jpg" alt="Antonio Maestro">
+                    <h2>Antonio Maestro</h2>
+                    <p>Lead vocalist and lyricist, bringing life to every performance with his dynamic stage presence.</p>
+                </div>
+                <div class="member">
+                    <img src="../images/member2.jpg" alt="Joey">
+                    <h2>Joey</h2>
+                    <p>Guitarist, weaving melodies that resonate deeply with the audience.</p>
+                </div>
+                <div class="member">
+                    <img src="../images/member3.jpg" alt="Kei-san">
+                    <h2>Kei-san</h2>
+                    <p>Pianist extraordinaire, creating grooves that anchor every song's rhythm.</p>
+                </div>
+                <div class="member">
+                    <img src="../images/member4.jpg" alt="Matteo Mysterio">
+                    <h2>Matteo Mysterio</h2>
+                    <p>Drummer and backbone of the band, driving the beats that energize the crowd.</p>
+                </div>
             </div>
-            <div class="member">
-                <img src="../images/member2.jpg" alt="Member 2">
-                <h2>Joey</h2>
-                <p>Guitarist, weaving melodies that resonate deeply with the audience.</p>
-            </div>
-            <div class="member">
-                <img src="../images/member3.jpg" alt="Member 3">
-                <h2>Kei-san</h2>
-                <p>Pianist extraordinaire, creating grooves that anchor every song's rhythm.</p>
-            </div>
-            <div class="member">
-                <img src="../images/member4.jpg" alt="Member 4">
-                <h2>Matteo Mysterio</h2>
-                <p>Drummer and backbone of the band, driving the beats that energize the crowd.</p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2024 No Way Band. All rights reserved.</p>

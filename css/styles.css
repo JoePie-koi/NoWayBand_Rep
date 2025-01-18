@@ -1,3 +1,11 @@
+/* Root Variables */
+:root {
+    --primary-bg: #2c3e50;
+    --accent-bg: #1abc9c;
+    --text-color: #ffffff;
+    --hover-bg: #b0b0b0;
+}
+
 /* General Reset */
 * {
     margin: 0;
@@ -6,160 +14,204 @@
 }
 
 body, html {
-    height: 100%; /* Ensure the body and HTML take up the full height */
-    margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
     line-height: 1.6;
+    background: #f4f4f4;
+    color: #333;
 }
 
-/* Header and Navigation */
+/* Header */
 header {
-    background: #34495e;
-    color: white;
-    padding: 10px 0;
     position: relative;
-    z-index: 1000; /* Ensure header is on top */
+    z-index: 1000;
 }
 
+/* Desktop Menu */
 nav.desktop-menu {
     display: flex;
-    justify-content: center; /* Centers the navigation area */
-    align-items: center; /* Vertically centers items */
-    position: relative; /* Allows positioning of social icons */
+    justify-content: center; /* Center the menu items */
+    align-items: center; /* Align items vertically */
+    background: var(--primary-bg);
     padding: 10px 20px;
-    background: #2c3e50;
+    position: relative; /* Allows positioning of social icons */
 }
 
-nav ul {
+nav.desktop-menu ul {
     display: flex;
     list-style: none;
+    margin: 0 auto; /* Keeps the menu centered */
     padding: 0;
-    margin: 0 auto; /* Ensures the navigation buttons are centered */
 }
 
-nav ul li {
-    margin: 0 15px; /* Adds spacing between navigation items */
+nav.desktop-menu ul li {
+    margin: 0 15px;
 }
 
-nav ul li a {
+nav.desktop-menu ul li a {
     text-decoration: none;
-    color: white;
+    color: var(--text-color);
     padding: 8px 15px;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
 
-nav ul li a.active {
-    background: #1abc9c;
+nav.desktop-menu ul li a.active {
+    background: var(--accent-bg);
     font-weight: bold;
 }
 
-nav ul li a:hover {
-    background: #b0b0b0;
-    color: white;
+nav.desktop-menu ul li a:hover {
+    background: var(--hover-bg);
 }
 
 /* Social Icons */
 .social-icons {
-    position: absolute; /* Positions icons relative to the nav */
-    right: 20px; /* Positions icons on the far right */
-    top: 50%; /* Vertically aligns icons */
-    transform: translateY(-50%); /* Adjust for vertical centering */
+    position: absolute; /* Allows independent positioning */
+    right: 20px; /* Align to the far-right edge */
+    top: 50%; /* Vertically center */
+    transform: translateY(-50%); /* Adjust for centering */
     display: flex;
-    gap: 10px; /* Adds spacing between icons */
+    gap: 15px;
 }
 
 .social-icons img {
-    width: 24px; /* Size of the icons */
+    width: 24px;
     height: 24px;
     cursor: pointer;
 }
 
 .social-icons img:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
+    transform: scale(1.1);
 }
 
-/* Mobile Navigation */
-#menu-toggle {
-    display: none; /* Hide the checkbox itself */
-}
-
+/* Mobile Menu */
 .menu-icon {
-    display: none;
+    display: block;
     font-size: 30px;
     color: white;
     position: absolute;
     top: 15px;
     right: 20px;
     cursor: pointer;
-    z-index: 1000;
+    z-index: 1001;
 }
 
-nav.mobile-nav {
+/* Sidebar Navigation */
+.sidebar-nav {
     display: none;
-    flex-direction: column;
-    align-items: center;
-    background: #2c3e50;
     position: fixed;
     top: 0;
-    left: 0;
     right: 0;
-    z-index: 999;
-    padding-top: 50px; /* Space for the header */
+    width: 60%;
+    height: 100%;
+    background: var(--primary-bg);
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    padding: 20px;
 }
 
-nav.mobile-nav ul {
+.sidebar-nav ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
-nav.mobile-nav ul li {
-    margin: 10px 0;
+.sidebar-nav ul li {
+    margin: 15px 0;
 }
 
-nav.mobile-nav ul li a {
+.sidebar-nav ul li a {
     text-decoration: none;
-    color: white;
-    padding: 10px 20px;
+    color: var(--text-color);
+    font-size: 18px;
+    display: block;
+    padding: 10px;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
 
-nav.mobile-nav ul li a:hover {
-    background: #1abc9c;
+.sidebar-nav ul li a:hover {
+    background: var(--accent-bg);
 }
 
-/* Toggle Mobile Menu */
-#menu-toggle:checked + .menu-icon + nav.mobile-nav {
-    display: flex;
+/* Checkbox Toggle for Sidebar */
+#menu-toggle {
+    display: none;
 }
+
+#menu-toggle:checked ~ .menu-icon {
+    display: none; /* Hide hamburger icon when sidebar is active */
+}
+
+#menu-toggle:checked ~ .sidebar-nav {
+    display: block;
+    transform: translateX(0); /* Slide the sidebar into view */
+}
+
+/* Overlay */
+#menu-overlay {
+    display: none;
+}
+
+#menu-toggle:checked ~ #menu-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+/* Menu Icon Styling */
+.menu-icon {
+    display: none; /* Initially hidden */
+    font-size: 30px; /* Adjust font size */
+    color: white; /* Default color */
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1001;
+    background: black; /* Add a visible background */
+    border-radius: 5px; /* Slightly round edges */
+    padding: 5px; /* Add spacing around the icon */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth color transition */
+}
+
+/* On Hover */
+.menu-icon:hover {
+    background: var(--accent-bg); /* Highlight color on hover */
+    color: white; /* Ensure text stays readable */
+}
+
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .menu-icon {
-        display: block; /* Show hamburger menu on mobile */
+        display: block;
     }
 
-    nav ul {
-        display: none; /* Hide desktop menu on mobile */
-    }
-
-    .social-icons {
-        display: none; /* Hide social icons on mobile */
+    nav.desktop-menu {
+        display: none;
     }
 }
 
 @media (min-width: 769px) {
     .menu-icon {
-        display: none; /* Hide hamburger menu on desktop */
+        display: none;
     }
 
-    nav.mobile-nav {
-        display: none; /* Hide mobile nav on desktop */
+    .sidebar-nav {
+        display: none;
     }
+}
+
+
+/* Hide the checkbox (menu toggle) */
+#menu-toggle {
+    display: none;
 }
 
 /* Hero Section (Unchanged) */
@@ -234,15 +286,16 @@ nav.mobile-nav ul li a:hover {
 
 .members {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    justify-content: space-around; /* Space evenly among members */
+    align-items: center; /* Align items vertically */
+    gap: 20px; /* Space between members */
+    flex-wrap: nowrap; /* Ensure no wrapping occurs */
 }
 
 .member {
+    flex: 0 0 calc(25% - 20px); /* Ensure 4 members fit in one row */
+    max-width: calc(25% - 20px); /* Consistent width */
     text-align: center;
-    flex: 1 1 calc(25% - 20px); /* 4 columns */
-    max-width: calc(25% - 20px);
     background: #f4f4f4;
     padding: 15px;
     border-radius: 10px;
@@ -250,8 +303,8 @@ nav.mobile-nav ul li a:hover {
 }
 
 .member img {
-    width: 100%;
-    height: auto;
+    width: 150px; /* Set consistent size for images */
+    height: 150px;
     border-radius: 50%; /* Circular images */
     margin-bottom: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -266,7 +319,21 @@ nav.mobile-nav ul li a:hover {
 .member p {
     font-size: 1rem;
     color: #666;
+    line-height: 1.6;
 }
+@media (max-width: 768px) {
+    .members {
+        flex-direction: column; /* Stack members */
+        align-items: center; /* Center alignment */
+        flex-wrap: wrap; /* Allow wrapping */
+    }
+
+    .member {
+        flex: 1 1 100%; /* Each member takes full width */
+        max-width: 100%; /* Full width for mobile */
+    }
+}
+
 
 
 /* Covers Page */
@@ -287,15 +354,13 @@ nav.mobile-nav ul li a:hover {
 }
 
 .videos {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid layout */
     gap: 20px;
     justify-content: center;
 }
 
 .video {
-    flex: 1 1 calc(33.333% - 20px); /* Responsive 3 columns */
-    max-width: calc(33.333% - 20px); /* Adjust for spacing */
     text-align: center;
     background: #f4f4f4;
     padding: 15px;
@@ -310,10 +375,11 @@ nav.mobile-nav ul li a:hover {
 }
 
 .video video {
-    max-width: 100%;
+    width: 100%; /* Ensures videos fit their container */
     border-radius: 10px;
     outline: none;
 }
+
 
 /* Gallery Page */
 .gallery {
